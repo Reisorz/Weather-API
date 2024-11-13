@@ -10,11 +10,11 @@ import lombok.*;
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OpenWeatherResponseEntity {
+public class MainEntity {
 
-    @JsonProperty("weather")
-    private WeatherEntity[] weather;
+    @JsonProperty("temp")
+    private String temp;
+    @JsonProperty("humidity")
+    private String humidity;
 
-    @JsonProperty("main")
-    private  MainEntity main;
 }

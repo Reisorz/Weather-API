@@ -10,4 +10,6 @@ import lombok.Setter;
 public class CityWeather {
     private String weather;
     private String details;
+    private String temp;
+    private String humidity;
 }
