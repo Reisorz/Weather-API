@@ -14,10 +14,12 @@ public class WeatherController {
     private WeatherService weatherService;
 
     @GetMapping("/weather/{city}")
-    public @ResponseBody WeatherResponse weather(@PathVariable("city") String city) {
+    public @ResponseBody WeatherResponse weather(@PathVariable("city") String city) throws Exception {
         final WeatherRequestDetails weatherRequestDetails = WeatherRequestDetails.builder()
                 .city(city)
                 .build();
+
+        return weatherService.getWeather(weatherRequestDetails);
 
     }
 }
