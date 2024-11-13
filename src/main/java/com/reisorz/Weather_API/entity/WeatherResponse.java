@@ -10,6 +10,6 @@ import lombok.*;
 public class WeatherResponse {
     private String weather;
     private String details;
-    private String temp;
-    private String humidity;
+    private Float temp;
+    private Integer humidity;
 }

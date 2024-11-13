@@ -13,8 +13,8 @@ import lombok.*;
 public class MainEntity {
 
     @JsonProperty("temp")
-    private String temp;
+    private Float temp;
     @JsonProperty("humidity")
-    private String humidity;
+    private Integer humidity;
 
 }
