@@ -29,7 +29,7 @@ public class WeatherService {
 
     @Cacheable(value = "getWeather", key = "#weatherRequestDetails.city", unless = "#result == null")
     public WeatherResponse getWeather(final WeatherRequestDetails weatherRequestDetails) throws Exception {
-        //get latitude and longitude
+        //get latitude and longitude from city
         final CityCoordinates cityCoordinates = geocodingCoordinatesTransformer
                 .transformToDomain(geocodingProvider.getCoordinates(weatherRequestDetails));
 

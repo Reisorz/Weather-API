@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OpenWeatherTransformer {
 
+    //Transforms the OpenWeatherResponseEntity from WeatherProvider into CityWeather object. Simplifying the data obtained.
     public CityWeather transformToDomain(OpenWeatherResponseEntity entity) {
 
         return CityWeather.builder()
@@ -18,6 +19,7 @@ public class OpenWeatherTransformer {
                 .build();
     }
 
+    //Transforms CityWeather into a WeatherResponse
     public WeatherResponse transformToEntity(CityWeather cityWeather) {
         return WeatherResponse.builder()
                 .weather(cityWeather.getWeather())

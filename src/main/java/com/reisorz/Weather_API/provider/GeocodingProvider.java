@@ -24,7 +24,6 @@ public class GeocodingProvider {
 
     //Provides coordinates (lon and lat) from the Geocoding API as a GeoCodingCoordinatesEntity object.
     public GeoCodingCoordinatesEntity getCoordinates(final WeatherRequestDetails weatherRequestDetails) throws Exception {
-        //Geocoding API call
 
         RestTemplate restTemplate = new RestTemplate();
         final ResponseEntity<GeoCodingCoordinatesEntity[]> responseEntity;

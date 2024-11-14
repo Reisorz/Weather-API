@@ -15,6 +15,8 @@ import java.time.Duration;
 @EnableCaching
 public class CacheConfig {
 
+
+    //Redis configuration. Remember to install redis and run redis-server
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         return new LettuceConnectionFactory();

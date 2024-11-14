@@ -25,9 +25,8 @@ public class WeatherProvider {
     private String weatherUrl;
 
 
-    //Provides weather from the Weather API as a WeatherResponse object.
+    //Provides weather from the Weather API as an OpenWeatherResponseEntity object.
     public OpenWeatherResponseEntity getWeather(final CityCoordinates cityCoordinates) throws Exception {
-        //Geocoding API call
 
         RestTemplate restTemplate = new RestTemplate();
         final ResponseEntity<OpenWeatherResponseEntity> responseEntity;
