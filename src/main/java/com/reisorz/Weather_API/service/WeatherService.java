@@ -9,6 +9,7 @@ import com.reisorz.Weather_API.provider.WeatherProvider;
 import com.reisorz.Weather_API.transformer.GeocodingCoordinatesTransformer;
 import com.reisorz.Weather_API.transformer.OpenWeatherTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,6 +27,7 @@ public class WeatherService {
     @Autowired
     private OpenWeatherTransformer openWeatherTransformer;
 
+    @Cacheable(value = "getWeather", key = "#weatherRequestDetails.city", unless = "#result == null")
     public WeatherResponse getWeather(final WeatherRequestDetails weatherRequestDetails) throws Exception {
         //get latitude and longitude
         final CityCoordinates cityCoordinates = geocodingCoordinatesTransformer
