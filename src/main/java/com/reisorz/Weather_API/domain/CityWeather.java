@@ -12,4 +12,5 @@ public class CityWeather {
     private String details;
     private Float temp;
     private Integer humidity;
+    private String icon;
 }
